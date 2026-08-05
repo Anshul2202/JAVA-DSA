@@ -1,4 +1,4 @@
-class A0005{
+class B0005{
 
     public static void main(String arr[]){
 
