@@ -7,7 +7,7 @@ class Solution258 {
         int temp = num;
 
         while(num > 9){
-            sum += temp % 10;
+            sum += temp % 10; //updating sum 
             temp /= 10;
 
             if( temp == 0){
