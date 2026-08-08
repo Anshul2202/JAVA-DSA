@@ -2,7 +2,7 @@ class C0005{
 
     public static void main(String arr[]){
 
-    int[] nums ={34 , 16 , 90 , 94, 18 , 9 , 7 , 3, 7 , 69};
+    int[] nums ={34 , 16 , 90 , 94, 18 , 9 , 7 , 3, 7 , 69 , 17};
 
     Insertion_Sort(nums);
 
@@ -13,7 +13,7 @@ class C0005{
 
     public static void Insertion_Sort(int a[]){
 
-        for(int i = 0; i < a.length - 1; i++){
+        for(int i = 0; i < a.length; i++){
 
             int j = i;
 
