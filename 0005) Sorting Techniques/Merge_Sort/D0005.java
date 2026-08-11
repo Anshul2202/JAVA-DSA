@@ -46,7 +46,7 @@ class D0005{
             }
         }
 
-        while(left <= mid){
+        while(left <= mid) {
             list.add(a[left]);
             left++;
         }
