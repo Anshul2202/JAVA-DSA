@@ -7,9 +7,9 @@ class Solution189 {
 
         if (k == 0) return;
 
+        reverseArr(nums , nums.length - k, nums.length - 1); 
+        reverseArr(nums , 0 , nums.length - k - 1);
         reverseArr(nums, 0, nums.length - 1);
-        reverseArr(nums, 0, k - 1);
-        reverseArr(nums, k, nums.length - 1);
     }
 
     public void reverseArr(int[] nums, int start, int end) {
