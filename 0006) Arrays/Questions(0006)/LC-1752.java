@@ -36,6 +36,7 @@ class Solution1752 {
             temp1 = nums[i + 1];
             nums[i + 1] = temp2;
             temp2 = temp1;
+            
         }
 
         nums[0] = temp2;
