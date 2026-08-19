@@ -1,3 +1,4 @@
+package Easy;
 // 977 - Squares of a Sorted Array
 
 import java.util.*;

@@ -1,3 +1,4 @@
+package Easy;
 // 26 - Remove Duplicates from Sorted Array
 
 class Solution26 {

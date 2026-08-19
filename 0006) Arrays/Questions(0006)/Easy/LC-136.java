@@ -1,3 +1,4 @@
+package Easy;
 // 136 - Single Number
 
 class Solution136 {

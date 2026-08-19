@@ -1,3 +1,4 @@
+package Easy;
 // 283 - Move Zeroes
 
 class Solution283 {

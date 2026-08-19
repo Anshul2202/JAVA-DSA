@@ -1,3 +1,4 @@
+package Easy;
 // 189 - Rotate Array
 
 class Solution189 {

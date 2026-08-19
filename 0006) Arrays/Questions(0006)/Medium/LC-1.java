@@ -1,3 +1,5 @@
+package Medium;
+
 // 1 - Two Sum
 
 import java.util.*;
