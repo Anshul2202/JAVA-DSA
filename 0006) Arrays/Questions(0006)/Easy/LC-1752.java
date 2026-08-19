@@ -1,4 +1,3 @@
-package Easy;
 // 1752 - Check if Array Is Sorted and Rotated
 
 class Solution1752 {

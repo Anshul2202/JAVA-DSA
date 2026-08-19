@@ -1,4 +1,3 @@
-package Easy;
 // 561 - Array Partition
 
 import java.util.*;

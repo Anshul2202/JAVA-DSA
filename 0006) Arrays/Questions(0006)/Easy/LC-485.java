@@ -1,4 +1,3 @@
-package Easy;
 // 485 - Max Consecutive Ones
 
 class Solution485 {
