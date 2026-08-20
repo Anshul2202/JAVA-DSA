@@ -1,5 +1,7 @@
 // 1207 - Unique Number of Occurrences
 
+import java.util.*;
+
 class Solution1207 {
     public boolean uniqueOccurrences(int[] arr) {
         
