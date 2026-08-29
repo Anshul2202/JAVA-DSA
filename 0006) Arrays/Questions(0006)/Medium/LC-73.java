@@ -7,27 +7,26 @@ class Solution73 {
 
         for(int i = 0; i < matrix.length; i++){
 
-            for(int j = 0; j < matrix[i].length; j++){
+            for(int j = 0; j < matrix[0].length; j++){
 
                 if(matrix[i][j] == 0){
 
                     if(j == 0){
                         col0 = 0;
-                        continue;
                     }
-
-                    matrix[0][j] = 0;
-                    matrix[i][0] = 0;
+                    else{
+                        matrix[i][0] = 0;
+                        matrix[0][j] = 0;
+                    }
                 }
             }
         }
 
-
         for(int i = 1; i < matrix.length; i++){
 
-            for(int j = 1; j < matrix[i].length; j++){
+            for(int j = 1; j < matrix[0].length; j++){
 
-                if(matrix[0][j] == 0 || matrix[i][0] == 0){
+                if(matrix[i][0] == 0 || matrix[0][j] == 0){
                     matrix[i][j] = 0;
                 }
             }
@@ -46,5 +45,6 @@ class Solution73 {
                 matrix[i][0] = 0;
             }
         }
+        
     }
 }
