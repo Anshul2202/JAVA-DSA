@@ -15,6 +15,5 @@ class Solution169 {
         }
 
         return el;
-        
     }
 }
