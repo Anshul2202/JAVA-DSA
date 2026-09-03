@@ -3,6 +3,7 @@
 import java.util.*;
 
 class Solution560 {
+    
     public int subarraySum(int[] nums, int k) {
         
         HashMap<Integer , Integer> map = new HashMap<>();
