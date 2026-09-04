@@ -5,30 +5,29 @@ import java.util.*;
 class Solution118 {
     public List<List<Integer>> generate(int numRows) {
 
-        List<List<Integer>> ansList = new ArrayList<>();
+        List<List<Integer>> list = new ArrayList<>();
 
         for(int i = 1; i <= numRows; i++){
-            ansList.add(generateRow(i));
+            list.add(generateRow(i));
         }
-
-        return ansList;
         
+        return list;
     }
 
     public List<Integer> generateRow(int n){
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> tempList = new ArrayList<>();
 
-        int ans = 1;
-        list.add(ans);
+        int el = 1;
+        tempList.add(el);
 
         for(int i = 1; i < n; i++){
-            ans *= n - i;
-            ans /= i;
+            el *= n - i;
+            el /= i;
 
-            list.add(ans);
+            tempList.add(el);
         }
 
-        return list;
+        return tempList;
     }
 }
