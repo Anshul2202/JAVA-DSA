@@ -1,7 +1,7 @@
 // 73 - Set Matrix Zeroes
 
 class Solution73 {
-    public void setZeroes(int[][] matrix) {
+    public void setZeroes(int[][] matrix){
 
         int col0 = 1;
 
