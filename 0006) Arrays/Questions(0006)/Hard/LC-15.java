@@ -5,31 +5,42 @@ import java.util.*;
 class Solution15 {
     public List<List<Integer>> threeSum(int[] nums) {
 
-        HashSet<List<Integer>> tripletSet = new HashSet<>();
+        List<List<Integer>> ans = new ArrayList<>();
 
-        HashSet<Integer> tempSet = new HashSet<>();
-        List<Integer> tempList = new ArrayList<>();
-        
-        for(int i = 0; i < nums.length; i++){
+        Arrays.sort(nums);
 
-            for(int j = i + 1; j < nums.length; j++){
+        int i = 0, j = 0, k = 0;
 
-                int val3 = -(nums[i] + nums[j]);
+        while(i < nums.length){
+            j = i + 1;
+            k = nums.length - 1;
 
-                if(tempSet.contains(val3)){
-                    tempList.addAll(List.of(nums[i] , nums[j] , val3));
-                    Collections.sort(tempList);
+            while(j < k){
 
-                    tripletSet.add(new ArrayList<>(tempList));
-                    tempList.clear();
+                int val = nums[i] + nums[j] + nums[k];
+
+                if(val < 0){
+                    j++;
+                    while(j < k &&nums[j] == nums[j - 1]) j++;
                 }
+                else if(val > 0){
+                    k--;
+                    while(j < k && nums[k] == nums[k + 1]) k--;
+                }
+                else{
+                    ans.add(new ArrayList<>(List.of(nums[i] , nums[j] , nums[k])));
 
-                tempSet.add(nums[j]);
+                    j++;
+                    k--;
+
+                    while(j < k && nums[j] == nums[j - 1]) j++;
+                    while(j < k && nums[k] == nums[ k + 1]) k--;
+                }
             }
-            tempSet.clear();
-        }
 
-        List<List<Integer>> ans = new ArrayList<>(tripletSet);
+            i++;
+            while(i < nums.length && nums[i] == nums[i - 1]) i++;
+        }
 
         return ans;
     }
