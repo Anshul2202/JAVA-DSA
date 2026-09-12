@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class Solution88 {
+class Solution88{
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         
         for(int i = m; i < nums1.length; i++){
