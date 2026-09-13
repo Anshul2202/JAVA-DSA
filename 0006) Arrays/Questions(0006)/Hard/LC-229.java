@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class Solution229 {
+class Solution229{
     public List<Integer> majorityElement(int[] nums) {
 
         List<Integer> list = new ArrayList<>();
