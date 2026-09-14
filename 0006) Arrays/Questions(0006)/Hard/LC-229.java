@@ -38,6 +38,7 @@ class Solution229{
         if(vote1 > nums.length/3) list.add(el1);
         if(vote2 > nums.length/3) list.add(el2);
 
-        return list;
+        return list; 
+        
     }
 }
