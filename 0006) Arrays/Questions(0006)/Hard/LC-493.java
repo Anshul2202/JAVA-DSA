@@ -8,6 +8,7 @@ class Solution493 {
 
     public int reversePairs(int[] nums) {
         mergeSort(nums, 0 , nums.length - 1);
+
         return cnt;
     }
 
@@ -20,9 +21,9 @@ class Solution493 {
         mergeSort(nums, low , mid);
         mergeSort(nums, mid + 1, high);
 
-        countPairs(nums, low, mid, high);
+        countPairs(nums , low, mid, high);
 
-        merge(nums , low, mid, high);
+        merge(nums, low, mid, high);
     }
 
     public void countPairs(int[] nums, int low, int mid, int high){
@@ -31,9 +32,7 @@ class Solution493 {
 
         for(int i = low; i <= mid; i++){
 
-            while(right <= high && nums[i] > (long) nums[right] * 2){
-                right++;
-            }
+            while(right <= high && nums[i] > (long) nums[right] * 2) right++;
 
             cnt += right - (mid + 1);
         }
@@ -47,22 +46,13 @@ class Solution493 {
 
         while(i <= mid && j <= high){
 
-            if(nums[i] <= nums[j]){
-                list.add(nums[i++]);
-            }
-            else{
-                list.add(nums[j++]);
-            }
+            if(nums[i] < nums[j]) list.add(nums[i++]);
+            else list.add(nums[j++]);
         }
 
-        while(i <= mid){
-            list.add(nums[i++]);
-        }
+        while(i <= mid) list.add(nums[i++]);
 
-        while(j <= high){
-            list.add(nums[j++]);
-        }
-
+        while(j <= high) list.add(nums[j++]);
 
         for(int k = low; k <= high; k++){
             nums[k] = list.get(k - low);
