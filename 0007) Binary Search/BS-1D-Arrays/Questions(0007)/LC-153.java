@@ -2,7 +2,7 @@
 
 class Solution153 {
     public int findMin(int[] nums) {
-        
+
         int low = 0, high = nums.length - 1;
         int min = Integer.MAX_VALUE;
 
