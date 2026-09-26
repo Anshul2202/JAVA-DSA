@@ -10,13 +10,13 @@ class Solution1283 {
         }
 
         int low = 1, high = max;
-        int ans = max;
+        int ans = -1;
 
         while(low <= high){
 
             int mid = (low + high) / 2;
 
-            if(getSum(nums , mid) <= threshold){
+            if(sumOfDivision(nums, mid) <= threshold){
                 ans = mid;
                 high = mid - 1;
             }
@@ -26,7 +26,7 @@ class Solution1283 {
         return ans;
     }
 
-    public int getSum(int[] nums, int n){
+    public int sumOfDivision(int[] nums, int n){
 
         int sum = 0;
 
