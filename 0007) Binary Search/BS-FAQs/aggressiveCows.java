@@ -2,35 +2,36 @@
 
 import java.util.*;
 
-class aggressiveCowsSol{
+class aggressiveCowsSol {
     public int aggressiveCows(int[] nums, int k) {
-        Arrays.sort(nums);
+       
+       Arrays.sort(nums);
 
-        int low = 1, high = nums[nums.length - 1] - nums[0];
+       int low = 1, high = nums[nums.length - 1] - nums[0];
+       
+       while(low <= high){
 
-        while(low <= high){
+        int mid = (low + high) / 2;
 
-            int mid = (low + high) / 2;
+        if(noOfCows(nums , mid) >= k) low = mid + 1;
+        else high = mid - 1;
+       }
 
-            if(noOfCows(nums, mid) >= k) low = mid + 1;
-            else high = mid - 1;
-        }
-
-        return high;
+       return high;
     }
 
-    public int noOfCows(int[] nums, int minDist){
+    public int noOfCows(int[] nums, int limit){
 
-        int cntCow = 1, last = nums[0];
+        int cowCnt = 1, last = nums[0];
 
         for(int i = 1; i < nums.length; i++){
 
-            if(nums[i] - last >= minDist){
-                cntCow++;
+            if(nums[i] - last >= limit){
+                cowCnt++;
                 last = nums[i];
             }
         }
 
-        return cntCow;
+        return cowCnt;
     }
 }
