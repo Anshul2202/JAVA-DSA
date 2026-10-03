@@ -1,7 +1,7 @@
 // 367 - Valid Perfect Square
 
 class Solution367 {
-    public boolean isPerfectSquare(int num) {
+    public boolean isPerfectSquare(int num){
         
         int low = 0 , high = 0;
 
