@@ -2,14 +2,15 @@
 
 class Solution1011 {
     public int shipWithinDays(int[] weights, int days) {
-        
-        int max = 0 , min = weights[0];
+
+        int max = 0, sum = 0;
+
         for(int i = 0; i < weights.length; i++){
-            max += weights[i];
-            min = Math.max(min , weights[i]);
+            max = Math.max(max , weights[i]);
+            sum += weights[i];
         }
 
-        int low = min, high = max;
+        int low = max, high = sum;
 
         while(low <= high){
 
@@ -22,24 +23,21 @@ class Solution1011 {
         return low;
     }
 
-    public int noOfDays(int[] nums, int capacity){
+    public int noOfDays(int[] nums, int limit){
 
-        int weight = 0, day = 0;
+        int days = 0, weight = 0;
+
         for(int i = 0; i < nums.length; i++){
-            weight += nums[i];
 
-            if(weight == capacity){
-                day++;
-                weight = 0;
-            }
-            else if(weight > capacity){
-                day++;
+            if(weight + nums[i] > limit){
+                days++;
                 weight = nums[i];
             }
+            else weight += nums[i];
         }
 
-        if(weight != 0) day++;
+        if(weight != 0) days++;
 
-        return day;
+        return days;
     }
 }
