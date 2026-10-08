@@ -2,7 +2,7 @@
 
 class Solution4 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        
+
         int n1 = nums1.length;
         int n2 = nums2.length;
 
@@ -28,17 +28,18 @@ class Solution4 {
 
             if(l1 <= r2 && l2 <= r1){
 
-                if((n1 + n2) % 2 == 0){
+                if((n1 + n2) % 2 != 0){
+                    return (double) Math.max(l1 , l2);
+                }
+                else{
                     return (double) (Math.max(l1 , l2) + Math.min(r1 , r2)) / 2;
                 }
-                else return Math.max(l1 , l2);
             }
-
+            
             if(l1 > r2) high = mid1 - 1;
             else if(l2 > r1) low = mid1 + 1;
-    
         }
-
+        
         return -1;
     }
 }
