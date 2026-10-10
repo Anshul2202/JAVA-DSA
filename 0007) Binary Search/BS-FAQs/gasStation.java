@@ -3,36 +3,37 @@
 class gasStationSol {
     public double minimiseMaxDistance(int[] arr, int k) {
 
-        int[] howMany = new int[arr.length - 1];
+       int maxDist = -1;
+
+       for(int i = 0; i < arr.length - 1; i++){
+            maxDist = Math.max(maxDist , arr[i + 1] - arr[i]);
+       }
+
+       double low = 0, high = maxDist;
+
+       while(high - low > 1e-6){
         
-        for(int i = 1; i <= k; i++){
+        double mid = (low + high) / 2;
 
-            double maxDist = -1;
-            int maxIdx = -1;
+        if(noOfGasStations(arr , mid) <= k) high = mid;
+        else low = mid;
 
-            for(int j = 0; j < arr.length - 1; j++){
+       }
 
-                double diff = arr[j + 1] - arr[j];
-                double currentDist = (double) diff / (howMany[j] + 1);
+       return high;
+    }
 
-                if(currentDist > maxDist){
-                    maxDist = currentDist;
-                    maxIdx = j;
-                }
-            }
+    public int noOfGasStations(int[] nums , double dist){
 
-            howMany[maxIdx]++;
+        int cnt = 0;
+
+        for(int i = 0; i < nums.length - 1; i++){
+            
+            double gap = nums[i + 1] - nums[i];
+
+            cnt += (int) Math.ceil(gap / dist) - 1;
         }
 
-        double result = 0;
-
-        for(int i = 0; i < arr.length - 1; i++){
-            double diff = arr[i + 1] - arr[i];
-            double distance = diff / (howMany[i] + 1);
-
-            result = Math.max(result , distance);
-        }
-
-        return result;
+        return cnt;
     }
 }
