@@ -5,7 +5,7 @@ class Solution74 {
 
         int n = matrix.length;
         int m = matrix[0].length;
-        
+
         int low = 0, high = m * n - 1;
 
         while(low <= high){
