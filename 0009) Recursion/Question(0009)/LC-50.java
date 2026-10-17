@@ -1,6 +1,6 @@
 // 50 - Pow(x, n)
 
-class Solution50 {
+class Solution50{
     public double myPow(double x, int n) {
 
         long power = n;
