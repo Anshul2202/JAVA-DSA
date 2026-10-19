@@ -2,13 +2,13 @@
 
 class Solution1922 {
     public int countGoodNumbers(long n) {
-
-        long even = (n + 1)/2;
+        
+        long even = (n + 1) / 2;
         long odd = n/2;
 
         int M = 1000000007;
 
-        long ans = (long) getPow(5 , even) * getPow(4 , odd) % M;
+        long ans = ((long) getPow(5 , even) * getPow(4 , odd)) % M;
 
         return (int) ans;
     }
@@ -22,9 +22,8 @@ class Solution1922 {
         long val = getPow(x , n/2);
 
         if(n % 2 == 0){
-            return (int) ((val * val) % M);
+            return (int) (val * val % M);
         }
-        return (int) ((val * val * x) % M);
-
+        return (int) (val * val * x % M);
     }
 }
