@@ -2,32 +2,31 @@
 
 import java.util.*;
 
-class cntSubSewSumKSol {
+class cntSubSeqSumKSol {
     public int countSubsequenceWithTargetSum(int[] nums, int k) {
 
-        return cntSubSeq(0, nums, 0, k, 0, new ArrayList<>());
+        return cntSubSeq(0, nums, 0, k, new ArrayList<>());
 
     }
 
-    public int cntSubSeq(int idx, int[] nums, int sum, int target, int cnt, List<Integer> list)
+    public int cntSubSeq(int idx, int[] nums, int sum, int target, List<Integer> list)
     {
-        int result = 0;
 
         if(idx == nums.length){
-            if(sum == target) cnt++;
-            return cnt;
+            if(sum == target) return 1;
+            return 0;
         }
 
         list.add(nums[idx]);
         sum += nums[idx];
 
-        result += cntSubSeq(idx + 1, nums, sum, target, cnt, list);
+        int l = cntSubSeq(idx + 1, nums, sum, target, list);
 
         list.remove(list.size() - 1);
         sum -= nums[idx];
 
-        result += cntSubSeq(idx + 1, nums, sum, target, cnt, list);
+        int r = cntSubSeq(idx + 1, nums, sum, target, list);
 
-        return result;
+        return l + r;
     }
 }
