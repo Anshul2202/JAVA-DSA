@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class generateBSSol {
+class generateBSSol{
     public List<String> generateBinaryStrings(int n) {
         
         List<String> result = new ArrayList<>();
