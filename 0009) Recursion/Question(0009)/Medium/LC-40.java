@@ -2,36 +2,33 @@
 
 import java.util.*;
 
-class Solution {
+class Solution40 {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
 
         Arrays.sort(candidates);
         
-        HashSet<List<Integer>> set = new HashSet<>();
-        getCombSum(0, candidates, 0, target, new ArrayList<>(), set);
-
         List<List<Integer>> result = new ArrayList<>();
-
-        for(List<Integer> i : set){
-            result.add(i);
-        }
+        getCombSum(0, candidates, target, new ArrayList<>(), result);
 
         return result;
     }
 
-    public void getCombSum(int idx, int[] nums, int sum, int k, List<Integer> list, HashSet<List<Integer>> res)
-    {
-        if(idx == nums.length){
-            if(sum == k) res.add(new ArrayList<>(list));
+    public void getCombSum(int idx, int[] nums,int target, List<Integer> list, List<List<Integer>> res) {
+
+        if(target == 0){
+            res.add(new ArrayList<>(list));
             return;
         }
 
-        sum += nums[idx];
-        list.add(nums[idx]);
-        getCombSum(idx + 1, nums, sum, k, list, res);
 
-        sum -= nums[idx];
-        list.remove(list.size() - 1);
-        getCombSum(idx + 1, nums, sum, k, list, res);
+        for(int i = idx; i < nums.length; i++){
+
+            if(nums[i] > target) break;
+            if(i > idx && nums[i] == nums[i - 1]) continue;
+
+            list.add(nums[i]);
+            getCombSum(i + 1, nums, target - nums[i], list, res);
+            list.remove(list.size() - 1);
+        }
     }
 }
