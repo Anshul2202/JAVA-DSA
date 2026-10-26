@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class Solution90 {
+class Solution90{
     public List<List<Integer>> subsetsWithDup(int[] nums) {
 
         Arrays.sort(nums);
