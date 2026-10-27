@@ -7,10 +7,10 @@ class Solution40 {
 
         Arrays.sort(candidates);
         
-        List<List<Integer>> result = new ArrayList<>();
-        getCombSum(0, candidates, target, new ArrayList<>(), result);
+        List<List<Integer>> res = new ArrayList<>();
+        getCombSum(0, candidates, target, new ArrayList<>(), res);
 
-        return result;
+        return res;
     }
 
     public void getCombSum(int idx, int[] nums,int target, List<Integer> list, List<List<Integer>> res) {
