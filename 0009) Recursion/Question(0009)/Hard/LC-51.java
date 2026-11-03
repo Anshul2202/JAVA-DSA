@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class Solution51 {
+class Solution51{
     public List<List<String>> solveNQueens(int n) {
 
         List<List<String>> ans = new ArrayList<>();
@@ -18,7 +18,7 @@ class Solution51 {
             }
         }
 
-        placeQueen(0, board, n, ans, left, leftDown, leftUp);
+        placeQueen(0, board,n, ans, left, leftDown, leftUp);
 
         return ans;
     }
