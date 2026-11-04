@@ -2,14 +2,14 @@
 
 import java.util.*;
 
-class RatInAMazeSol{
+class RatInAMazeSol {
     public List<String> findPath(int[][] grid) {
-        List<String> ans = new ArrayList<>();
+        List<String> res = new ArrayList<>();
         int[][] isVisited = new int[grid.length][grid[0].length];
 
-        getPath(0, 0, grid, isVisited, new StringBuilder(), ans);
+        getPath(0, 0, grid, isVisited, new StringBuilder(), res);
 
-        return ans;
+        return res;
     }
 
     public void getPath(int row, int col, int[][] grid, int[][] isVisited, StringBuilder sb, List<String> ans){
