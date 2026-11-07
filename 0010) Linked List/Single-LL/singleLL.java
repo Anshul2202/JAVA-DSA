@@ -1,17 +1,17 @@
-// My Custom Data-type
+// Custom Data-Type
 class Node{
 
     int data;
     Node next;
 
     Node(int data, Node next){
-        this.data = data;
-        this.next = next;
+      this.data = data;
+      this.next = next;
     }
 
     Node(int data){
-        this.data = data;
-        this.next = null;
+      this.data = data;
+      this.next = null;
     }
 }
 
@@ -19,14 +19,14 @@ class Node{
 public class singleLL{
 
     public static Node convertArr2LL(int[] arr){
-
+    
         Node head = new Node(arr[0]);
         Node mover = head;
 
         for(int i = 1; i < arr.length; i++){
-            Node temp = new Node(arr[i]);
-            mover.next = temp;
-            mover = temp;
+          Node temp = new Node(arr[i]);
+          mover.next = temp;
+          mover = temp;
         }
 
         return head;
@@ -38,8 +38,8 @@ public class singleLL{
         int cnt = 0;
 
         while(temp != null){
-            temp = temp.next;
-            cnt++;
+          cnt++;
+          temp = temp.next;
         }
 
         return cnt;
@@ -50,35 +50,35 @@ public class singleLL{
         Node temp = head;
 
         while(temp != null){
+
             if(temp.data == val){
-                System.out.println(val + " is present");
-                return;
+              System.out.println(val + " is present");
+              return;
             }
             temp = temp.next;
         }
-
         System.out.println(val + " is Not present");
     }
-    
-    public static void main(String[] arr){
-        
-        int[] nums = {3, 12, 13, 54, 94};
 
-        Node head = convertArr2LL(nums);
+    public static void main(String[] args) {
+      
+        int[] arr = {1, 23, 12, 34, 13, 54, 45};
 
-        // Treversal in LL
+        Node head = convertArr2LL(arr);
+
         Node temp = head;
 
+        // Treversal In LL
         while(temp != null){
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+          System.out.print(temp.data + " ");
+          temp = temp.next;
         }
 
-        // Count El in LL
+        // Length of LL
         int cnt = getCnt(head);
-        System.out.println("\n" + cnt);
+        System.out.println("\nLength of LL : " + cnt);
 
-        // Search for El in LL
+        // Search El in LL
         isPresent(head, 13);
     }
 }
