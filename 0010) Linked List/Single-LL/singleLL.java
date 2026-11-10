@@ -14,8 +14,6 @@ class Node{
       this.next = null;
     }
 }
-
-
 public class singleLL{
 
     public static Node convertArr2LL(int[] arr){
