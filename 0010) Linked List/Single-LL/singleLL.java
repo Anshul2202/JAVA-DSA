@@ -1,6 +1,5 @@
-// Custom Data-Type
+// Custom Data type
 class Node{
-
     int data;
     Node next;
 
@@ -14,69 +13,71 @@ class Node{
       this.next = null;
     }
 }
-public class singleLL{
 
-    public static Node convertArr2LL(int[] arr){
-    
-        Node head = new Node(arr[0]);
-        Node mover = head;
+public class singleLL {
+    public static void main(String[] args) {
+      
+      int[] arr = {12, 6, 7, 11, 1, 3, 5};
 
-        for(int i = 1; i < arr.length; i++){
-          Node temp = new Node(arr[i]);
-          mover.next = temp;
-          mover = temp;
-        }
+      Node head = convertArr2LL(arr);
 
-        return head;
+      // Treversal In LL
+      Node temp = head;
+
+      while(temp != null){
+        System.out.println(temp.data);
+        temp = temp.next;
+      }
+
+      // Lenght of LL
+      int len = getLength(head);
+      System.out.println("Length of LL : " + len);
+
+      // Search El in LL
+      isPresent(head, 13);
     }
 
-    public static int getCnt(Node head){
+    public static Node convertArr2LL(int[] arr){
 
-        Node temp = head;
-        int cnt = 0;
+      Node head = new Node(arr[0]);
+      Node mover = head;
 
-        while(temp != null){
-          cnt++;
-          temp = temp.next;
-        }
+      for(int i = 1; i < arr.length; i++){
+        Node temp = new Node(arr[i]);
+        mover.next = temp;
+        mover = temp;
+      }
 
-        return cnt;
+      return head;
+    }
+
+    public static int getLength(Node head){
+
+      Node temp = head;
+      int cnt = 0;
+
+      while(temp != null){
+        cnt++;
+        temp = temp.next;
+      }
+
+      return cnt;
     }
 
     public static void isPresent(Node head, int val){
 
-        Node temp = head;
+      Node temp = head;
 
-        while(temp != null){
+      while(temp != null){
 
-            if(temp.data == val){
-              System.out.println(val + " is present");
-              return;
-            }
-            temp = temp.next;
+        if(temp.data == val){
+          System.out.println(val + " is present");
+          return;
         }
-        System.out.println(val + " is Not present");
+        temp = temp.next;
+      }
+      System.out.println(val + " is Not present");
     }
 
-    public static void main(String[] args) {
-      
-        int[] arr = {1, 23, 12, 34, 13, 54, 45};
 
-        Node head = convertArr2LL(arr);
-
-        Node temp = head;
-
-        // Treversal In LL
-        while(temp != null){
-          System.out.print(temp.data + " ");
-          temp = temp.next;
-        }
-
-        // Length of LL
-        int cnt = getCnt(head);
-        System.out.println("\nLength of LL : " + cnt);
-
-        // Search El in LL
-        isPresent(head, 13);
-    }
 }
